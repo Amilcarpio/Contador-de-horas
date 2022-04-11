@@ -10,13 +10,12 @@ const year = dataSplit[2]
 const data = new Date(year, month - 1, day)
 
 //calculando a diferença entre as datas em ms 
-const data2 = data;
 const data1 = new Date();
+const data2 = data;
 
 const diff = Math.abs(data1.getTime() - data2.getTime());
 
-console.log(diff)
-
+//Criando evento para a chamada do botão
 let button = document.querySelector('#str-btn');
 button.addEventListener('click')
 
@@ -35,7 +34,6 @@ const convertMinutes = () => {
     const minutes = Math.ceil(diff/(1000 * 60));
     document.getElementById('minutes').innerHTML = minutes;
 }    
-
 
 const convertHours = () => {
     const hours = Math.ceil(diff/(1000*60*60));
