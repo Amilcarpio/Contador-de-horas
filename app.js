@@ -15,30 +15,30 @@ const data2 = data;
 
 const diff = Math.abs(data1.getTime() - data2.getTime());
 
-//Criando evento para a chamada do botão
-let button = document.querySelector('#str-btn');
-button.addEventListener('click')
-
 //Convertendo o valor da diferença entre as datas
 const convertDays = () => {
     const days = Math.ceil(diff/(1000*60*60*24));
-    document.getElementById('days').innerHTML = days;
+    document.getElementsById('days').innerHTML = days;
 }
 
 const convertSeconds = () => {
     const seconds = Math.ceil(diff/1000);
-    document.getElementById('seconds').innerHTML = seconds;
+    document.getElementsById('seconds').innerHTML = seconds;
 }
 
 const convertMinutes = () => {
     const minutes = Math.ceil(diff/(1000 * 60));
-    document.getElementById('minutes').innerHTML = minutes;
+    document.getElementsById('minutes').innerHTML = minutes;
 }    
 
 const convertHours = () => {
     const hours = Math.ceil(diff/(1000*60*60));
-    document.getElementById('hours').innerHTML = hours;
+    document.getElementsById('hours').innerHTML = hours;
 }
+
+//Criando disparo do relógio pelo botão
+let button = document.getElementById('start-btn');
+button.addEventListener('click', convertDays)
 
 convertDays();
 convertSeconds();
