@@ -1,5 +1,5 @@
 //convertendo a data do input em milisegundos
-const input = document.getElementById('calendar')
+const input = document.querySelector('#calendar')
 const calendar = input.value;
  
 const dataSplit = calendar.split('/');
@@ -18,22 +18,22 @@ const diff = Math.abs(data1.getTime() - data2.getTime());
 //Convertendo o valor da diferença entre as datas
 const convertDays = () => {
     const days = Math.ceil(diff/(1000*60*60*24));
-    document.getElementsById('days').innerHTML = days;
+    document.getElementById('days').innerHTML = days;
 }
 
 const convertSeconds = () => {
     const seconds = Math.ceil(diff/1000);
-    document.getElementsById('seconds').innerHTML = seconds;
+    document.getElementById('seconds').innerHTML = seconds;
 }
 
 const convertMinutes = () => {
     const minutes = Math.ceil(diff/(1000 * 60));
-    document.getElementsById('minutes').innerHTML = minutes;
+    document.getElementById('minutes').innerHTML = minutes;
 }    
 
 const convertHours = () => {
     const hours = Math.ceil(diff/(1000*60*60));
-    document.getElementsById('hours').innerHTML = hours;
+    document.getElementById('hours').innerHTML = hours;
 }
 
 //Criando disparo do relógio pelo botão
