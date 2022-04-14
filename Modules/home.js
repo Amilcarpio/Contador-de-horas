@@ -1,12 +1,14 @@
-//convertendo a data do input em milisegundos
-const input = document.querySelector('#calendar')
-const calendar = input.value;
- 
-const dataSplit = calendar.split('/');
-const day = dataSplit[0];
-const month = dataSplit[1];
-const year = dataSplit[2]
+//convertendo a data do input em milisegundo
+const calendarEl = document.getElementById('calendar');
+const calendarValue = calendarEl ? calendarEl.value : 0;
 
-const data = new Date(year, month - 1, day)
+const btn = document.querySelector('#start-btn')
 
-export { data };
+btn.addEventListener('click', function(){
+    calendarValue
+
+    console.log(calendarValue)
+})
+
+export { calendarEl };
+export { calendarValue };
