@@ -1,9 +1,18 @@
-import { calendarValue } from '/modules/home.js'
+function queryObj() {
+    var result = {}, keyValuePairs = location.search.slice(1).split("&");
+    keyValuePairs.forEach(function(keyValuePair) {
+        keyValuePair = keyValuePair.split('=');
+        result[decodeURIComponent(keyValuePair[0])] = decodeURIComponent(keyValuePair[1]) || '';
+    });
+    return result;
+}
+const calendarValue = queryObj().time
+console.log(queryObj())
 
-const dataSplit = calendarValue.split('/');
-const day = dataSplit[0];
+const dataSplit = calendarValue.split('-');
+const day = dataSplit[2];
 const month = dataSplit[1];
-const year = dataSplit[2]
+const year = dataSplit[0]
 
 const data = new Date(year, month - 1, day)
 
@@ -38,7 +47,7 @@ const convertHours = () => {
 
 //Criando disparo do relógio pelo botão
 let button = document.getElementById('start-btn');
-button.addEventListener('click', convertDays)
+//button.addEventListener('click', convertDays)
 
 convertDays();
 convertSeconds();

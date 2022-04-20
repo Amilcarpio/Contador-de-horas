@@ -41,14 +41,21 @@
 
         <!--calendar-->
         <div class="input-group">
-            <input id="calendar" value="2022-12-31" type="date" class="form-control" style="background-color: #60645c62; border-style: none; border-radius: 30px; color: rgb(131, 131, 131);">
+            <input id="calendar"  type="date" class="form-control" style="background-color: #60645c62; border-style: none; border-radius: 30px; color: rgb(131, 131, 131);">
         </div>
 
         <!--button-->
-        <a id="start-btn" class="btn btn-block mt-3" href="clock.html" role="button" style="background-color:#21EB00;border-radius: 30px;">Iniciar Contagem</a>
+        <button id="start-btn" onclick="openPage()" class="btn btn-block mt-3" href="clock.html?time=200" role="button" style="background-color:#21EB00;border-radius: 30px;">Iniciar Contagem</button>
 
     </div>
 </div>
+
+<script>
+    function openPage(){
+        const input = document.querySelector('#calendar').value
+        window.location.href = "clock.html?time="+input
+    }
+</script>
 
 <script type="module" src="Modules/home.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

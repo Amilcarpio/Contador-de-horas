@@ -20,7 +20,7 @@
 
         <a href="home.html" class="navbar-brand" style="color: #21EB00; font-size: 40px; font-weight: 700;">Contator</a>
 
-        <button id="rst-btn" class="btn btn-lg" type="reset" value="reset" style="background-color: #21EB00; color: black; border-radius: 30px; font-weight:700;">Reiniciar</button>
+        <button id="rst-btn" href="home.html" class="btn btn-lg" type="button" value="reset" style="background-color: #21EB00; color: black; border-radius: 30px; font-weight:700;" >Reiniciar</button>
 
     </div>
 </nav>
@@ -28,30 +28,42 @@
 <h1 class="display-1 text-center mt-5">Faltam</h1>
 
 <div class="container">
-    <div class="row">
+    <div class="row mt-5">
 
         <div class="col">
-            <span id="days" class="display-1" style="color: white;"></span>
+            <span id="days" class="display-3" style="color: white;"></span>
             <p class="display-4" style="color: #21EB00;">Dias</p>
         </div>
 
         <div class="col">
-            <span id="hours" class="display-1" style="color: white;"></span>
+            <span id="hours" class="display-3" style="color: white;"></span>
             <p class="display-4" style="color: #21EB00;">Horas</p>
         </div>
 
         <div class="col">
-            <span id="minutes" class="display-1" style="color: white;"></span>
+            <span id="minutes" class="display-3" style="color: white;"></span>
             <p class="display-4 " style="color: #21EB00;">Minutos</p>
         </div>
 
         <div class="col">
-            <span id="seconds" class="display-1" style="color: white;"></span>
+            <span id="seconds" class="display-3" style="color: white;"></span>
             <p class="display-4" style="color: #21EB00;">Segundos</p>
         </div>
 
     </div>
 </div>
+<script>
+    function queryObj() {
+    var result = {}, keyValuePairs = location.search.slice(1).split("&");
+    keyValuePairs.forEach(function(keyValuePair) {
+        keyValuePair = keyValuePair.split('=');
+        result[decodeURIComponent(keyValuePair[0])] = decodeURIComponent(keyValuePair[1]) || '';
+    });
+    return result;
+}
+var myParam = queryObj()
+alert(myParam.time)
+</script>
 
 <script type='module' src="Modules/clock.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
